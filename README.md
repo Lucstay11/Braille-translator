@@ -1,1 +1,1 @@
-coucou
+<img src=".banner.png">
