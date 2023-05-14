@@ -5,7 +5,7 @@ public class Translate {
     //This is how the value entered in the text input is returned and translated to braille
     private HashMap<Character, String>  frenchToBraille;
 
-    public Traducteur(){
+    public Translate(){
            frenchToBraille = new HashMap<>();
 
             frenchToBraille.put('a', "⠁");
