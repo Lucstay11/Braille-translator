@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Graphique extends JFrame implements KeyListener {
+public class Graphic extends JFrame implements KeyListener {
     private Traducteur brailleController; // we instantiate the Traducteur class that we will use below
 
     // textInputArea - user input (text to be translated)
