@@ -2,14 +2,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+
 public class Graphic extends JFrame implements KeyListener {
-    private Traducteur brailleController; // we instantiate the Traducteur class that we will use below
+    private Translate brailleController; // we instantiate the Traducteur class that we will use below
 
     // textInputArea - user input (text to be translated)
     // brailleArea - text translated to braille
     private JTextArea textInputArea, brailleArea;
 
-    public Graphique(){
+    public Graphic(){
         // Add the window title
         super("Braille translator");
 
@@ -31,7 +32,7 @@ public class Graphic extends JFrame implements KeyListener {
         // Place the graphical interface in the center of the screen when executed
         setLocationRelativeTo(null);
 
-        brailleController = new Traducteur();
+        brailleController = new Translate();
         addGraphicalContent();
 
     }
@@ -93,12 +94,12 @@ JScrollPane brailleScroll = new JScrollPane(brailleArea);
 brailleScroll.setBounds(20, 430, 484, 236);
 
 // Add to the graphical interface
-add(titreLabel);
+add(titleLabel);
 add(textInputLabel);
 add(textInputScroll);
 add(brailleInputLabel);
 add(brailleScroll);
-
+}
 @Override
 public void keyTyped(KeyEvent e) {
 
@@ -109,14 +110,17 @@ public void keyPressed(KeyEvent e) {
 
 }
 
+
 @Override
 public void keyReleased(KeyEvent e) {
 // Ignore Shift key press
 if(e.getKeyCode() != KeyEvent.VK_SHIFT){
 // Get input text
 String inputText = textInputArea.getText();
-int inputTextSize = textInputArea.getText().length();
 // Update graphical interface with translated text!
     brailleArea.setText(brailleController.traduireToBraille(inputText));
+   }
   }
-}
+ }
+
+
