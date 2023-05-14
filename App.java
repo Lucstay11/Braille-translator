@@ -6,7 +6,7 @@ public class App {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new Graphique().setVisible(true);
+                new Graphic().setVisible(true);
             }
         });
     }
